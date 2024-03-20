@@ -26,19 +26,6 @@ app.use("/api/chat", chatRoutes);
 app.use("/api/chat/message", messageRoutes);
 
 
-// -------------------deployment------------------
-// const __dirname1 = path.resolve();
-// app.use(express.static(path.join(__dirname1, 'Frontend', 'dist')));
-
-// // Serve the index.html file for all other routes
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname1, 'Frontend', 'dist', 'index.html'));
-// });
-
-//--------------------deployment-------------------
-
-//error handlers
-
 app.use(notfound);
 app.use(errorHandler);
 
@@ -91,11 +78,11 @@ io.on("connection", (socket) => {
 });
 
 
-const distPath = path.join(__dirname, '../Frontend', 'dist');
-app.use(express.static(distPath));
+// const distPath = path.join(__dirname, '../Frontend', 'dist');
+// app.use(express.static(distPath));
 
-// Serve the index.html file for all other routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(distPath, 'index.html'));
-});
+// // Serve the index.html file for all other routes
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(distPath, 'index.html'));
+// });
 
