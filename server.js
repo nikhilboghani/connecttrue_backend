@@ -51,7 +51,7 @@ const io = require('socket.io')(server, {
 
   pingtimeout: 60000,
   cors: {
-    origin: "https://65fb1f6fe6a6e70e38278182--velvety-frangollo-a7623c.netlify.app",
+    origin: "https://connecttrue-frontend.onrender.com",
   },
 });
 
