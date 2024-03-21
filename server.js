@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/chat/message", messageRoutes);
+app.use("/api/chat", chatRoutes);
 
 
 app.use(notfound);
@@ -42,6 +43,7 @@ const io = require('socket.io')(server, {
   },
 });
 
+app.use(cors({ origin: 'https://connecttrue-frontend.onrender.com' }));
 
 io.on("connection", (socket) => {
   console.log("connected to socket io");
