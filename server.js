@@ -7,8 +7,6 @@ const userRoutes = require('./Routes/userRoutes');
 const chatRoutes = require('./Routes/chatRoutes');
 const messageRoutes = require('./Routes/messageRoutes');
 const { notfound, errorHandler } = require('./Middlewares/ErrorMiddleware');
-const path = require('path');
-
 
 
 const app = express();
@@ -39,15 +37,11 @@ const io = require('socket.io')(server, {
 
   pingtimeout: 60000,
   cors: {
-    origin: "https://connecttrue-frontend.onrender.com",
+    origin:process.env.FRONTEND_URI,
   },
 });
 
-const corsOptions = {
-  origin: "https://connecttrue-frontend.onrender.com",
-};
-
-app.use(cors(corsOptions));
+app.use(cors({ origin: process.env.FRONTEND_URI }));
 
 io.on("connection", (socket) => {
   console.log("connected to socket io");
