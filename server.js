@@ -43,7 +43,12 @@ const io = require('socket.io')(server, {
   },
 });
 
-app.use(cors({ origin: 'https://connecttrue-frontend.onrender.com' }));
+const corsOptions = {
+  origin: "https://connecttrue-frontend.onrender.com",
+};
+
+app.use(cors(corsOptions));
+
 
 io.on("connection", (socket) => {
   console.log("connected to socket io");
@@ -78,13 +83,3 @@ io.on("connection", (socket) => {
     socket.leave(userData._id);
   })
 });
-
-
-// const distPath = path.join(__dirname, '../Frontend', 'dist');
-// app.use(express.static(distPath));
-
-// // Serve the index.html file for all other routes
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(distPath, 'index.html'));
-// });
-
