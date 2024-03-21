@@ -49,7 +49,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-
 io.on("connection", (socket) => {
   console.log("connected to socket io");
 
@@ -83,3 +82,6 @@ io.on("connection", (socket) => {
     socket.leave(userData._id);
   })
 });
+
+
+
