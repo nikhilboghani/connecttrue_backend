@@ -3,7 +3,7 @@ const connectDB=async() =>{
     // const Mongod=await MongoMemoryServer.create();
     // const getUri=Mongod.getUri();
     mongoose.set('strictQuery', true);
-    await mongoose.connect(`mongodb+srv://nikhilboghani1234:uLPJs1BhvAPb4OUO@cluster0.unfvnxd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
+    await mongoose.connect(`mongodb+srv://nikhilboghani1234:1644412887@cluster0.unfvnxd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
         .then(() => console.log("done..."))
         .catch((err) => console.log(err));
 //     mongoose.set('strictQuery', true)
